@@ -1,4 +1,4 @@
-# Last updated: 11/12/2025, 4:58:56 AM
+# Last updated: 11/12/2025, 5:06:27 PM
 """
 # Definition for a Node.
 class Node:
@@ -10,7 +10,7 @@ class Node:
 from typing import Optional
 class Solution:
     def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
-        if not Node:
+        if not node:
             return None
         
         oldtonew = {}
@@ -25,4 +25,4 @@ class Solution:
             for nei in node.neighbors:
                 copy.neighbors.append(dfs(nei))
             return copy
-        return dfs(node) if node else None
+        return dfs(node) if not None else None
