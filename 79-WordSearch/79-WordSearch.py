@@ -1,4 +1,4 @@
-# Last updated: 11/13/2025, 4:56:34 AM
+# Last updated: 11/13/2025, 4:57:46 AM
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
         rows,cols = len(board),len(board[0])
@@ -6,7 +6,8 @@ class Solution:
         def dfs(r,c,i):
             if i == len(word):
                 return True
-            if (r not in range(rows) or c not in range(cols) or board[r][c] == "#" or word[i] != board[r][c]):
+            
+            if (r not in range(rows) or c not in range(cols) or word[i] != board[r][c] or board[r][c] == "#"):
                 return False
             
             board[r][c] = "#"
@@ -19,3 +20,4 @@ class Solution:
                 if dfs(r,c,0) == True:
                     return True
         return False
+                
