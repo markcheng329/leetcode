@@ -1,7 +1,7 @@
-# Last updated: 3/23/2025, 7:46:19 PM
+# Last updated: 11/13/2025, 2:18:55 AM
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        preMap = { i:[] for i in range(numCourses)}
+        preMap = [[] for i in range(numCourses)]
         for crs,pre in prerequisites:
             preMap[crs].append(pre)
         visit = set()
@@ -10,20 +10,16 @@ class Solution:
             if crs in visit:
                 return False
             
-            if preMap[crs] == []:
-                return True
-            
             visit.add(crs)
             for pre in preMap[crs]:
                 if not dfs(pre):
                     return False
+                
             visit.remove(crs)
-            preMap[crs]=[]
+            preMap[crs] = []
             return True
-
-        for c in range(numCourses):
-            if not dfs(c):
+        
+        for i in range(numCourses):
+            if not dfs(i):
                 return False
         return True
-
-    
