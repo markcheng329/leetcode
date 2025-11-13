@@ -1,19 +1,22 @@
-# Last updated: 10/22/2025, 12:31:09 AM
+# Last updated: 11/13/2025, 6:06:59 AM
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
-        candidates.sort()
+        subset = []
+    
 
-        def backtrack(i, cur, remain):
+        def backtracking(start,remain):
             if remain == 0:
-                res.append(cur.copy())
+                res.append(subset.copy())
+            
+            if remain < 0:
                 return
-            for j in range(i, len(candidates)):
-                if candidates[j] > remain:
-                    break
-                cur.append(candidates[j])
-                backtrack(j, cur, remain - candidates[j])
-                cur.pop()
+            
+            for i in range(start,len(candidates)):
+                val = candidates[i]
+                subset.append(val)
+                backtracking(i,remain-val)
+                subset.pop()
         
-        backtrack(0, [], target)
+        backtracking(0,target)
         return res
