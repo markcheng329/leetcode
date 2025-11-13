@@ -1,4 +1,4 @@
-# Last updated: 11/13/2025, 6:11:39 AM
+# Last updated: 11/13/2025, 6:15:36 AM
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
@@ -8,10 +8,9 @@ class Solution:
             if remain == 0:
                 res.append(subset.copy())
             
-            if remain < 0:
-                return
-            
             for i in range(start,len(candidates)):
+                if remain < 0:
+                    return
                 subset.append(candidates[i])
                 backtracking(i,remain-candidates[i])
                 subset.pop()
