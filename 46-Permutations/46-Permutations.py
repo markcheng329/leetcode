@@ -1,9 +1,9 @@
-# Last updated: 11/13/2025, 6:30:38 AM
+# Last updated: 11/13/2025, 6:33:46 AM
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         res = []
         subset = []
-        used = [False] * len(nums)
+        used  = [False] * len(nums)
 
         def backtracking():
             if len(subset) == len(nums):
@@ -11,7 +11,7 @@ class Solution:
                 return
             
             for i in range(len(nums)):
-                if used[i]:
+                if used[i] == True:
                     continue
                 
                 used[i] = True
@@ -19,8 +19,6 @@ class Solution:
                 backtracking()
                 subset.pop()
                 used[i] = False
-            
+        
         backtracking()
         return res
-
-            
