@@ -1,24 +1,23 @@
+# Last updated: 11/13/2025, 6:54:03 AM
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         res = []
-        stack = []
+        subset = []
 
-        def backtrack(openN,closeN):
-            if openN==closeN==n:
-                res.append("".join(stack))
-                return res
+        def backtracking(left,right):
+            if len(subset) == 2 * n:
+                res.append("".join(subset))
+                return 
             
-            if openN < n:
-                stack.append("(")
-                backtrack(openN+1,closeN)
-                stack.pop()
+            if left < n:
+                subset.append("(")
+                backtracking(left+1,right)
+                subset.pop()
             
-            if closeN<openN:
-                stack.append(")")
-                backtrack(openN,closeN+1)
-                stack.pop()
-        backtrack(0,0)
-        return res
-
-
+            if right < left:
+                subset.append(")")
+                backtracking(left,right+1)
+                subset.pop()
         
+        backtracking(0,0)
+        return res
