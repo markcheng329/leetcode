@@ -1,33 +1,34 @@
-# Last updated: 11/14/2025, 5:43:51 PM
+# Last updated: 11/14/2025, 5:54:45 PM
 class Solution:
     def solveNQueens(self, n: int) -> List[List[str]]:
         col = set()
         posdiag = set()
         nagdiag = set()
 
-        res = []
-        board = [["."] * n for i in range(n)]
+        res= []
+        board = [ ["."] * n for i in range(n)]
 
-        def dfs(i):
-            if i == n:
+        def backtrack(r):
+            if r == n:
                 copy = ["".join(row) for row in board]
                 res.append(copy)
                 return
             
             for c in range(n):
-                if (c in col or(i+c) in posdiag or (i-c) in nagdiag):
+                if c in col or (r+c) in posdiag or (r-c) in nagdiag:
                     continue
-                
+            
                 col.add(c)
-                posdiag.add(i+c)
-                nagdiag.add(i-c)
-                board[i][c] = "Q"
+                posdiag.add(r+c)
+                nagdiag.add(r-c)
+                board[r][c] = "Q"
 
-                dfs(i+1)
+                backtrack(r+1)
 
                 col.remove(c)
-                posdiag.remove(i+c)
-                nagdiag.remove(i-c)
-                board[i][c] = "."
-        dfs(0)
+                posdiag.remove(r+c)
+                nagdiag.remove(r-c)
+                board[r][c] = "."
+        
+        backtrack(0)
         return res
