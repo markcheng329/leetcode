@@ -1,15 +1,14 @@
-# Last updated: 11/12/2025, 4:57:31 AM
+# Last updated: 11/14/2025, 8:45:29 PM
 class Solution:
     def leastInterval(self, tasks: List[str], n: int) -> int:
-        freq = [0] *26
+        count = [0] * 26
         for task in tasks:
-            freq[ord(task)-ord("A")] +=1
-        freq.sort()
+            count[ord(task) - ord('A')] += 1
 
-        chunk=freq[25]-1
-        idle = chunk * n
-        
-        for i in range(24,-1,-1):
-            idle -= min(chunk,freq[i])
-        
-        return len(tasks) + idle if idle >= 0 else len(tasks)
+        maxf = max(count)
+        maxCount = 0
+        for i in count:
+            maxCount += 1 if i == maxf else 0
+
+        time = (maxf - 1) * (n + 1) + maxCount
+        return max(len(tasks), time)
