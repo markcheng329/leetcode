@@ -1,4 +1,4 @@
-# Last updated: 11/14/2025, 10:35:49 PM
+# Last updated: 11/14/2025, 10:36:39 PM
 class Solution:
     def rotate(self, matrix: List[List[int]]) -> None:
         """
@@ -7,11 +7,11 @@ class Solution:
         l, r = 0,len(matrix) -1
         while l < r:         
             for i in range(r-l):
-                top,bottom = l,r
-                topleft = matrix[top][l+i]
-                matrix[top][l+i] = matrix[bottom-i][l]
-                matrix[bottom-i][l] = matrix[bottom][r-i]
-                matrix[bottom][r-i] = matrix[top+i][r]
-                matrix[top+i][r]= topleft
+                # top,bottom = l,r
+                topleft = matrix[l][l+i]
+                matrix[l][l+i] = matrix[r-i][l]
+                matrix[r-i][l] = matrix[r][r-i]
+                matrix[r][r-i] = matrix[l+i][r]
+                matrix[l+i][r]= topleft
             l+=1
             r-=1
