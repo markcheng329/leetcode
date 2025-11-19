@@ -1,4 +1,4 @@
-# Last updated: 10/26/2025, 4:40:48 PM
+# Last updated: 11/18/2025, 10:42:14 PM
 class Solution:
     def trap(self, height: List[int]) -> int:
         l, r = 0,len(height)-1
@@ -8,11 +8,12 @@ class Solution:
 
         while l < r:
             if lmax < rmax:
-                l+=1
+                l +=1
                 lmax = max(lmax,height[l])
-                res += lmax - height[l]
+                res += lmax-height[l]
             else:
                 r -=1
                 rmax = max(rmax,height[r])
                 res += rmax - height[r]
         return res
+            
