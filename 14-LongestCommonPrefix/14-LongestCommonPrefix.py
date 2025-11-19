@@ -1,3 +1,4 @@
+# Last updated: 11/19/2025, 1:22:44 AM
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         res = ""
@@ -7,4 +8,4 @@ class Solution:
                 if i == len(s) or s[i] != strs[0][i]:
                     return res
             res += strs[0][i]
-        return "".join(res)
+        return res
