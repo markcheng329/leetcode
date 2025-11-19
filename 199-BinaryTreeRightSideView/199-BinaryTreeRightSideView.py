@@ -1,3 +1,4 @@
+# Last updated: 11/18/2025, 11:31:48 PM
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -11,11 +12,12 @@ class Solution:
         def dfs(node,depth):
             if not node:
                 return None
-            
+
             if len(res) == depth:
                 res.append(node.val)
             
             dfs(node.right,depth+1)
             dfs(node.left,depth+1)
+        
         dfs(root,0)
         return res
