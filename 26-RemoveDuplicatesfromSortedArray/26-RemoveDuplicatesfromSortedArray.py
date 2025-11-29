@@ -1,9 +1,9 @@
-# Last updated: 11/29/2025, 1:51:23 AM
+# Last updated: 11/29/2025, 1:52:26 AM
 1class Solution:
 2    def removeDuplicates(self, nums: List[int]) -> int:
 3        if not nums:
 4            return 0
-5            
+5        
 6        slow = 1
 7
 8        for fast in range(1,len(nums)):
