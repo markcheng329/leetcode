@@ -1,13 +1,13 @@
-class Solution:
-    def numRescueBoats(self, people: List[int], limit: int) -> int:
-        people.sort()
-        res = 0
-        l,r=0,len(people)-1
-
-        while l <= r:
-            remain = limit - people[r]
-            r -=1
-            res +=1
-            if l <= r and remain >= people[l]:
-                l +=1
-        return res
+# Last updated: 11/30/2025, 5:05:41 AM
+1class Solution:
+2    def numRescueBoats(self, people: List[int], limit: int) -> int:
+3        people.sort()
+4        l, r = 0,len(people)-1
+5        res = 0
+6
+7        while l <= r:
+8            if people[l] + people[r] <= limit:
+9                l +=1
+10            r -=1
+11            res +=1
+12        return res
