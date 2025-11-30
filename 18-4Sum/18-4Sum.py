@@ -1,30 +1,32 @@
-# Last updated: 7/9/2025, 1:05:23 AM
-class Solution:
-    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
-        nums.sort()
-        res = []
-
-        for i in range(len(nums)):
-            if i > 0 and nums[i] == nums[i-1]:
-                continue
-            for j in range(i+1,len(nums)):
-                if j > i+1 and nums[j] == nums[j-1]:
-                    continue
-
-                l,r = j+1,len(nums)-1
-
-                while l < r:
-                    total = nums[i] + nums[j] + nums[l] + nums[r]
-                    if total > target:
-                        r-=1
-                    elif total < target:
-                        l +=1
-                    else:
-                        res.append([nums[i],nums[j],nums[l],nums[r]])
-                        l +=1
-                        r-=1
-                        while l < r and nums[l] == nums[l-1]:
-                            l +=1
-                        while l < r and nums[r] == nums[r+1]:
-                            r-=1
-        return res
+# Last updated: 11/30/2025, 4:35:30 AM
+1class Solution:
+2    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+3        nums.sort()
+4        res = []
+5
+6        for i in range(len(nums)):
+7            if i > 0 and nums[i] == nums[i-1]:
+8                continue
+9            for j in range(i+1,len(nums)):
+10                if j > i+1 and nums[j] == nums[j-1]:
+11                    continue
+12                
+13                l, r = j + 1, len(nums)-1
+14
+15                while l < r:
+16                    total = nums[i] + nums[j] + nums[l] + nums[r]
+17                    if total > target:
+18                        r-=1
+19                    elif total < target:
+20                        l +=1
+21                    else:
+22                        res.append([nums[i],nums[j],nums[l],nums[r]])
+23                        l +=1
+24                        r -=1
+25                        while l < r and nums[l] == nums[l-1]:
+26                            l +=1
+27                        while l < r and nums[r] == nums[r+1]:
+28                            r -=1
+29        return res
+30
+31
