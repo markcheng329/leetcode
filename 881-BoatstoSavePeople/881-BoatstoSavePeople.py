@@ -1,4 +1,4 @@
-# Last updated: 11/30/2025, 5:05:41 AM
+# Last updated: 11/30/2025, 5:07:34 AM
 1class Solution:
 2    def numRescueBoats(self, people: List[int], limit: int) -> int:
 3        people.sort()
@@ -8,6 +8,8 @@
 7        while l <= r:
 8            if people[l] + people[r] <= limit:
 9                l +=1
-10            r -=1
-11            res +=1
-12        return res
+10            else:
+11                pass
+12            r -=1
+13            res +=1
+14        return res
