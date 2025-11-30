@@ -1,4 +1,4 @@
-# Last updated: 11/30/2025, 2:15:55 AM
+# Last updated: 11/30/2025, 4:39:03 AM
 1class Solution:
 2    def threeSum(self, nums: List[int]) -> List[List[int]]:
 3        nums.sort()
@@ -23,4 +23,6 @@
 22                    r-=1
 23                    while l < r and nums[l] == nums[l-1]:
 24                        l +=1
-25        return res
+25                    while l < r and nums[r] == nums[r+1]:
+26                        r -=1
+27        return res
