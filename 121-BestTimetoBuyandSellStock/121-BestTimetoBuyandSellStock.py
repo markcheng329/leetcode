@@ -1,10 +1,10 @@
-# Last updated: 11/19/2025, 12:54:30 AM
-class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        low = float("inf")
-        res = 0
-        
-        for i in range(len(prices)):
-            low = min(low,prices[i])
-            res = max(res,prices[i]-low)
-        return res
+# Last updated: 12/2/2025, 1:03:42 AM
+1class Solution:
+2    def maxProfit(self, prices: List[int]) -> int:
+3        low = float("inf")
+4        res = 0
+5         
+6        for i in range(len(prices)):
+7            low = min(low,prices[i])
+8            res = max(res,prices[i]-low)
+9        return res
