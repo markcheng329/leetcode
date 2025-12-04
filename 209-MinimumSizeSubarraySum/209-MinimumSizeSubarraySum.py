@@ -1,4 +1,4 @@
-# Last updated: 12/3/2025, 10:34:35 PM
+# Last updated: 12/3/2025, 10:35:44 PM
 1class Solution:
 2    def minSubArrayLen(self, target: int, nums: List[int]) -> int:
 3        l = 0
