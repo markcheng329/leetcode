@@ -1,4 +1,4 @@
-# Last updated: 12/2/2025, 2:44:07 AM
+# Last updated: 12/3/2025, 9:06:37 PM
 1class Solution:
 2    def checkInclusion(self, s1: str, s2: str) -> bool:
 3        if len(s1) > len(s2):
@@ -19,7 +19,8 @@
 18        for i in range(len(s1),len(s2)):
 19            have[ord(s2[i])-ord("a")] +=1
 20            have[ord(s2[i-len(s1)])-ord("a")] -=1
-21            
+21
 22            if have == need:
 23                return True
 24        return False
+25
