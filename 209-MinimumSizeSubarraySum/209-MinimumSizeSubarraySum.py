@@ -1,9 +1,9 @@
-# Last updated: 12/3/2025, 10:35:44 PM
+# Last updated: 12/6/2025, 1:55:53 PM
 1class Solution:
 2    def minSubArrayLen(self, target: int, nums: List[int]) -> int:
-3        l = 0
-4        res = float("inf")
-5        total = 0
+3        res = float("inf")
+4        total = 0
+5        l = 0
 6
 7        for i in range(len(nums)):
 8            total += nums[i]
@@ -11,5 +11,4 @@
 10                res = min(res,i-l+1)
 11                total -= nums[l]
 12                l +=1
-13                
-14        return res if res != float("inf") else 0
+13        return res if res != float("inf") else 0
