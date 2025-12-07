@@ -1,4 +1,4 @@
-# Last updated: 12/6/2025, 9:54:59 PM
+# Last updated: 12/6/2025, 9:55:07 PM
 1class Solution:
 2    def minWindow(self, s: str, t: str) -> str:
 3        if not s or not t or len(t) > len(s):
