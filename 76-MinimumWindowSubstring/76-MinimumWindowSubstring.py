@@ -1,27 +1,27 @@
-# Last updated: 10/26/2025, 10:07:40 PM
-class Solution:
-    def minWindow(self, s: str, t: str) -> str:
-        if not s or not t or len(t) > len(s):
-            return ""
-
-        need= Counter(t)
-        l = 0
-        missing = len(t)
-        best_len = float("inf")
-        best_l = 0
-
-        for i in range(len(s)):
-            need[s[i]]-=1
-            if need[s[i]] >= 0:
-                missing -=1
-            
-            while missing == 0:
-                if (i-l +1) < best_len:
-                    best_len = i-l +1
-                    best_l = l
-                
-                need[s[l]] +=1
-                if need[s[l]] > 0:
-                    missing +=1
-                l+=1
-        return "" if best_len == float("inf") else s[best_l:best_l+best_len]
+# Last updated: 12/6/2025, 9:54:47 PM
+1class Solution:
+2    def minWindow(self, s: str, t: str) -> str:
+3        if not s or not t or len(t) > len(s):
+4            return ""
+5        
+6        l = 0
+7        best_len = float("inf")
+8        best_l =0
+9        missing = len(t)
+10        need = Counter(t)
+11
+12        for i in range(len(s)):
+13            need[s[i]] -=1
+14            if need[s[i]] >=0:
+15                missing -=1
+16            
+17            while missing == 0:
+18                if i-l+1 < best_len:
+19                    best_len = i-l+1
+20                    best_l = l
+21                
+22                need[s[l]] +=1
+23                if need[s[l]] > 0:
+24                    missing +=1
+25                l +=1
+26        return "" if best_len == float("inf") else s[best_l:best_l+best_len]
