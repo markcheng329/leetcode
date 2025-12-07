@@ -1,4 +1,4 @@
-# Last updated: 12/6/2025, 9:55:07 PM
+# Last updated: 12/6/2025, 9:58:12 PM
 1class Solution:
 2    def minWindow(self, s: str, t: str) -> str:
 3        if not s or not t or len(t) > len(s):
@@ -21,9 +21,11 @@
 20                    best_l = l
 21                
 22                need[s[l]] +=1
-23                if need[s[l]] > 0:
-24                    missing +=1
-25                l +=1
-26        return "" if best_len == float("inf") else s[best_l:best_l + best_len]
-27        
-28
+23                
+24                if need[s[l]] > 0:
+25                    missing +=1
+26                l +=1
+27                
+28        return "" if best_len == float("inf") else s[best_l:best_l + best_len]
+29        
+30
