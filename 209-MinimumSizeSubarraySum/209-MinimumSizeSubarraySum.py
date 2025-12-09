@@ -1,4 +1,4 @@
-# Last updated: 12/6/2025, 1:55:53 PM
+# Last updated: 12/9/2025, 1:25:52 AM
 1class Solution:
 2    def minSubArrayLen(self, target: int, nums: List[int]) -> int:
 3        res = float("inf")
