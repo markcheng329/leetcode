@@ -1,21 +1,20 @@
-# Last updated: 12/10/2025, 11:45:52 PM
+# Last updated: 12/10/2025, 11:46:14 PM
 1class Solution:
 2    def sortColors(self, nums: List[int]) -> None:
 3        """
 4        Do not return anything, modify nums in-place instead.
 5        """
-6        left,right = 0 ,len(nums)-1
-7        
-8        i = 0
-9
-10        while i <= right:
-11            if nums[i] == 0:
-12                nums[i],nums[left] = nums[left],nums[i]
-13                i +=1
-14                left +=1
-15            elif nums[i] == 2:
-16                nums[i],nums[right] = nums[right],nums[i]
-17                right -=1
-18            else:
-19                i +=1
-20
+6        l, r = 0,len(nums)-1
+7        i = 0
+8
+9        while i <= r:
+10            if nums[i] == 0:
+11                nums[l],nums[i] = nums[i],nums[l]
+12                i +=1
+13                l +=1
+14            elif nums[i] == 2:
+15                nums[r],nums[i] = nums[i],nums[r]
+16                r-=1
+17            else:
+18                i +=1
+19        return nums
