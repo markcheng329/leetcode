@@ -1,4 +1,4 @@
-# Last updated: 12/18/2025, 1:24:31 AM
+# Last updated: 12/18/2025, 1:43:41 AM
 1class Solution:
 2    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
 3        q = deque()
@@ -18,8 +18,7 @@
 17            if i-l+1 == k:
 18                res.append(nums[q[0]])
 19                l +=1
-20            
-21            i+=1
-22
-23        return res
-24
+20        
+21
+22        return res
+23
