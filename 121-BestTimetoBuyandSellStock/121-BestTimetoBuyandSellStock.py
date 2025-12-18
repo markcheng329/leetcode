@@ -1,11 +1,10 @@
-# Last updated: 12/3/2025, 8:57:06 PM
+# Last updated: 12/18/2025, 12:24:49 AM
 1class Solution:
 2    def maxProfit(self, prices: List[int]) -> int:
-3        low = float("inf")
-4        res = 0
+3        res = 0
+4        low = float("inf")
 5
 6        for i in range(len(prices)):
 7            low = min(low,prices[i])
 8            res = max(res,prices[i]-low)
 9        return res
-10
