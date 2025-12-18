@@ -1,4 +1,4 @@
-# Last updated: 12/17/2025, 9:58:27 PM
+# Last updated: 12/17/2025, 10:02:10 PM
 1class Solution:
 2    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
 3        group = defaultdict(list)
