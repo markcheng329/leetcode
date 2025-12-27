@@ -1,7 +1,7 @@
-# Last updated: 12/27/2025, 2:21:45 AM
+# Last updated: 12/27/2025, 2:22:44 AM
 1class Solution:
 2    def checkInclusion(self, s1: str, s2: str) -> bool:
-3        if not s1 or not s2 or len(s1) > len(s2):
+3        if len(s1) > len(s2):
 4            return False
 5        
 6        have = [0] * 26
