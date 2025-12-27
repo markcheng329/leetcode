@@ -1,4 +1,4 @@
-# Last updated: 12/27/2025, 2:38:30 AM
+# Last updated: 12/27/2025, 2:40:13 AM
 1class Solution:
 2    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
 3        i = 0
@@ -13,11 +13,12 @@
 12            
 13            q.append(i)
 14
-15            if l > q[0]:
+15            while q and q[0] < l:
 16                q.popleft()
-17            
-18            if i-l+1 == k:
-19                res.append(nums[q[0]])
-20                l +=1
-21            i+=1
-22        return res
+17
+18            
+19            if i-l+1 == k:
+20                res.append(nums[q[0]])
+21                l +=1
+22            i+=1
+23        return res
