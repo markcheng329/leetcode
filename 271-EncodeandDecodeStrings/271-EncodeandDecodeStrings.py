@@ -1,11 +1,11 @@
-# Last updated: 12/27/2025, 12:20:55 AM
+# Last updated: 12/27/2025, 12:21:53 AM
 1class Codec:
 2    def encode(self, strs: List[str]) -> str:
 3        """Encodes a list of strings to a single string.
 4        """
 5        res= []
 6        for s in strs:
-7            res += str(len(s)) + "#" + s
+7            res.append(str(len(s)) + "#" + s)
 8        return "".join(res)
 9        
 10
