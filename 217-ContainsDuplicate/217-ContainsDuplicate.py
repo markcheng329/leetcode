@@ -1,4 +1,4 @@
-# Last updated: 12/17/2025, 9:13:16 PM
+# Last updated: 12/26/2025, 11:02:53 PM
 1class Solution:
 2    def containsDuplicate(self, nums: List[int]) -> bool:
 3        seen = set()
@@ -6,6 +6,5 @@
 5        for i in range(len(nums)):
 6            if nums[i] in seen:
 7                return True
-8            else:
-9                seen.add(nums[i])
-10        return False
+8            seen.add(nums[i])
+9        return False
