@@ -1,4 +1,4 @@
-# Last updated: 12/18/2025, 12:24:49 AM
+# Last updated: 12/27/2025, 1:27:23 AM
 1class Solution:
 2    def maxProfit(self, prices: List[int]) -> int:
 3        res = 0
