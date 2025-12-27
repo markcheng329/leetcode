@@ -1,4 +1,4 @@
-# Last updated: 12/27/2025, 12:21:53 AM
+# Last updated: 12/27/2025, 12:22:20 AM
 1class Codec:
 2    def encode(self, strs: List[str]) -> str:
 3        """Encodes a list of strings to a single string.
