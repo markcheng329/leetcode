@@ -1,8 +1,8 @@
-# Last updated: 12/17/2025, 11:11:20 PM
+# Last updated: 12/27/2025, 12:30:12 AM
 1class Solution:
 2    def isValidSudoku(self, board: List[List[str]]) -> bool:
-3        cols = defaultdict(set)
-4        rows = defaultdict(set)
+3        rows = defaultdict(set)
+4        cols = defaultdict(set)
 5        squares = defaultdict(set)
 6
 7        for row in range(9):
@@ -10,12 +10,10 @@
 9                if board[row][col] == ".":
 10                    continue
 11                
-12                x = board[row][col] 
-13
-14                if x in cols[col] or x in rows[row] or x in squares[row//3,col//3]:
-15                    return False
-16                
-17                rows[row].add(x)
-18                cols[col].add(x)
-19                squares[row//3,col//3].add(x)
-20        return True
+12                if board[row][col] in rows[row] or board[row][col] in cols[col] or board[row][col] in squares[row//3,col//3]:
+13                    return False
+14                
+15                rows[row].add(board[row][col])
+16                cols[col].add(board[row][col])
+17                squares[row//3,col//3].add(board[row][col])
+18        return True
