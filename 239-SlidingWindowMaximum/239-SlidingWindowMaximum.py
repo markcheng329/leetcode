@@ -1,24 +1,23 @@
-# Last updated: 12/27/2025, 2:40:13 AM
+# Last updated: 12/28/2025, 5:36:09 AM
 1class Solution:
 2    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
-3        i = 0
-4        l = 0
-5        res = []
-6        q = deque()
+3        q = deque()
+4        res = []
+5        i = 0
+6        l = 0
 7
 8        while i < len(nums):
-9            #q=[0,-1]
-10            while q and nums[q[-1]] < nums[i]:
-11                q.pop()
-12            
-13            q.append(i)
-14
-15            while q and q[0] < l:
-16                q.popleft()
-17
-18            
-19            if i-l+1 == k:
-20                res.append(nums[q[0]])
-21                l +=1
-22            i+=1
-23        return res
+9            while q and nums[q[-1]] < nums[i]:
+10                q.pop()
+11            
+12            q.append(i)
+13
+14            while q and q[0] < l:
+15                q.popleft()
+16            
+17            if i-l+1 == k:
+18                res.append(nums[q[0]])
+19                l +=1
+20            
+21            i +=1
+22        return res
