@@ -1,14 +1,16 @@
-# Last updated: 12/28/2025, 6:24:42 AM
+# Last updated: 12/30/2025, 6:42:23 PM
 1class Solution:
 2    def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
-3        stack = []
-4
-5        groups = sorted(zip(position,speed), reverse = True)
-6
-7        for position, speed in groups:
-8            i = (target - position) / (speed)
-9            if not stack or stack[-1] < i:
-10                stack.append(i)
-11            else:
-12                continue
-13        return len(stack)
+3        
+4        stack = []
+5
+6        groups = sorted(zip(position,speed), reverse = True)
+7
+8        for position, speed in groups:
+9            i = (target-position) /speed
+10            if not stack or stack[-1] < i:
+11                stack.append(i)
+12            else:
+13                continue
+14        return len(stack)
+15        
