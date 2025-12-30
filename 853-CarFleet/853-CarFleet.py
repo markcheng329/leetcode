@@ -1,4 +1,4 @@
-# Last updated: 12/30/2025, 6:45:39 PM
+# Last updated: 12/30/2025, 6:45:46 PM
 1class Solution:
 2    def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
 3        stack = []
@@ -9,6 +9,5 @@
 8            i = (target - position) / speed
 9            if not stack or stack[-1] < i:
 10                stack.append(i)
-11            else:
-12                continue
-13        return len(stack)
+11                continue
+12        return len(stack)
