@@ -1,4 +1,4 @@
-# Last updated: 12/30/2025, 8:43:11 PM
+# Last updated: 12/30/2025, 8:44:58 PM
 1class Solution:
 2    def search(self, nums: List[int], target: int) -> int:
 3
