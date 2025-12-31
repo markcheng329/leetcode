@@ -1,4 +1,4 @@
-# Last updated: 12/31/2025, 3:55:58 AM
+# Last updated: 12/31/2025, 4:02:11 AM
 1class Solution:
 2    def minEatingSpeed(self, piles: List[int], h: int) -> int:
 3        l, r = 1, max(piles)
