@@ -1,4 +1,4 @@
-# Last updated: 12/31/2025, 3:18:40 AM
+# Last updated: 1/2/2026, 4:45:47 AM
 1class Solution:
 2    def findMin(self, nums: List[int]) -> int:
 3        l, r = 0 , len(nums)-1
