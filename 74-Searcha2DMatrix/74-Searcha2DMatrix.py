@@ -1,19 +1,20 @@
-# Last updated: 12/30/2025, 9:31:03 PM
+# Last updated: 1/2/2026, 4:37:11 AM
 1class Solution:
 2    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
-3        l ,r = 0, len(matrix) * len(matrix[0]) -1
-4
-5        while l <= r:
-6            mid = (l+r)//2
-7            row = mid // len(matrix[0])
-8            col = mid % len(matrix[0])
-9            val = matrix[row][col]
-10
-11            if val > target:
-12                r = mid-1
-13            elif val < target:
-14                l = mid+1
-15            else:
-16                return True
-17        return False
-18
+3        m = len(matrix)
+4        n = len(matrix[0])
+5        l,r = 0,m*n-1
+6
+7        while l <= r:
+8            mid = (l+r)//2
+9            row = mid // n
+10            col = mid % n
+11
+12            if matrix[row][col] == target:
+13                return True
+14            
+15            if matrix[row][col] > target:
+16                r = mid -1
+17            else:
+18                l = mid +1
+19        return False
