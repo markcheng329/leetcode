@@ -1,4 +1,4 @@
-# Last updated: 1/5/2026, 1:18:48 AM
+# Last updated: 1/5/2026, 2:06:51 AM
 1"""
 2# Definition for a Node.
 3class Node:
@@ -12,8 +12,8 @@
 11    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
 12        if not head:
 13            return None
-14            
-15        #A-A'-B-B'-C-C'
+14
+15        #a-a'-b-b'-c-c'
 16        
 17        l1 = head
 18        while l1:
@@ -22,22 +22,22 @@
 21            l1.next = l2
 22            l1 = l2.next
 23        
-24        newhead = head.next
-25
-26        l1 = head
-27        while l1:
-28            if l1.random:
-29                l1.next.random = l1.random.next
-30            l1= l1.next.next
-31        
-32        newhead = head.next
-33        
-34        l1 = head
-35        while l1:
-36            l2 = l1.next
-37            l1.next = l2.next
-38            if l2.next:
-39                l2.next = l2.next.next
-40            l1 = l1.next
-41        
-42        return newhead
+24        l1 = head
+25        while l1:
+26            if l1.random:
+27                l1.next.random = l1.random.next
+28            l1 = l1.next.next
+29        
+30        newhead = head.next
+31
+32        l1= head
+33        while l1:
+34            l2 = l1.next
+35            l1.next = l2.next
+36            if l2.next:
+37                l2.next = l2.next.next
+38            l1 = l1.next
+39        
+40        return newhead
+41
+42
