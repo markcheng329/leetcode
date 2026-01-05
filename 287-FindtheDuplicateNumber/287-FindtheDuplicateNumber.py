@@ -1,4 +1,4 @@
-# Last updated: 1/5/2026, 2:50:18 AM
+# Last updated: 1/5/2026, 2:50:31 AM
 1class Solution:
 2    def findDuplicate(self, nums: List[int]) -> int:
 3        slow = nums[0]
@@ -10,8 +10,8 @@
 9        
 10        res = 0
 11
-12        while res != slow:
+12        while res != fast:
 13            res = nums[res]
-14            slow = nums[slow]
+14            fast = nums[fast]
 15        
 16        return res
