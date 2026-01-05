@@ -1,17 +1,10 @@
-# Last updated: 7/10/2025, 10:25:13 PM
-class Solution:
-    def findDuplicate(self, nums: List[int]) -> int:
-        slow = nums[0]
-        fast = nums[0]
-
-        while True:
-            slow = nums[slow]
-            fast = nums[nums[fast]]
-            if slow == fast:
-                break
-            
-        slow = nums[0]
-        while slow != fast:
-            slow = nums[slow]
-            fast = nums[fast]
-        return slow
+# Last updated: 1/5/2026, 2:40:27 AM
+1class Solution:
+2    def findDuplicate(self, nums: List[int]) -> int:
+3        seen = set()
+4        for i in range(len(nums)):
+5            if nums[i] in seen:
+6                return nums[i]
+7            else:
+8                seen.add(nums[i])
+9        
