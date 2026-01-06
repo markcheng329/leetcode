@@ -1,4 +1,4 @@
-# Last updated: 1/5/2026, 2:15:12 AM
+# Last updated: 1/6/2026, 1:33:29 AM
 1"""
 2# Definition for a Node.
 3class Node:
@@ -17,7 +17,7 @@
 16        while l1:
 17            l2 = Node(l1.val)
 18            l2.next = l1.next
-19            l1. next = l2
+19            l1.next = l2
 20            l1 = l2.next
 21        
 22        l1 = head
@@ -37,3 +37,4 @@
 36            l1 = l1.next
 37        
 38        return newhead
+39
