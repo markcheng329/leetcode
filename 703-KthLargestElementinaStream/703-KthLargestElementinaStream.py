@@ -1,4 +1,4 @@
-# Last updated: 1/6/2026, 5:05:32 AM
+# Last updated: 1/6/2026, 5:05:52 AM
 1class KthLargest:
 2
 3    def __init__(self, k: int, nums: List[int]):
@@ -14,9 +14,7 @@
 13        return self.minheap[0]
 14        
 15
-16        
-17
-18
-19# Your KthLargest object will be instantiated and called as such:
-20# obj = KthLargest(k, nums)
-21# param_1 = obj.add(val)
+16
+17# Your KthLargest object will be instantiated and called as such:
+18# obj = KthLargest(k, nums)
+19# param_1 = obj.add(val)
