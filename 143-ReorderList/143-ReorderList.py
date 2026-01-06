@@ -1,4 +1,4 @@
-# Last updated: 1/4/2026, 6:52:19 PM
+# Last updated: 1/6/2026, 12:54:37 AM
 1# Definition for singly-linked list.
 2# class ListNode:
 3#     def __init__(self, val=0, next=None):
@@ -30,5 +30,3 @@
 29            second.next = temp1
 30            first = temp1
 31            second = temp2
-32    
-33
