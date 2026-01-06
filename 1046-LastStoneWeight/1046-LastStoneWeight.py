@@ -1,14 +1,14 @@
-# Last updated: 11/16/2025, 5:17:29 AM
-class Solution:
-    def lastStoneWeight(self, stones: List[int]) -> int:
-        maxHeap = [-s for s in stones]
-        heapq.heapify(maxHeap)
-
-        while len(maxHeap) > 1:
-            y = -heapq.heappop(maxHeap)
-            x = -heapq.heappop(maxHeap)
-
-            if y>x:
-                heapq.heappush(maxHeap,-(y-x))
-        
-        return -maxHeap[0] if maxHeap else 0
+# Last updated: 1/6/2026, 5:26:05 AM
+1class Solution:
+2    def lastStoneWeight(self, stones: List[int]) -> int:
+3        maxheap = [-s for s in stones]
+4        heapq.heapify(maxheap)
+5
+6        while len(maxheap) > 1:
+7            y = -heapq.heappop(maxheap)
+8            x = -heapq.heappop(maxheap)
+9
+10            if y!=x:
+11                heapq.heappush(maxheap,-(y-x))
+12
+13        return -maxheap[0] if maxheap else 0
