@@ -1,4 +1,4 @@
-# Last updated: 1/6/2026, 4:02:49 AM
+# Last updated: 1/6/2026, 4:03:17 AM
 1class Solution:
 2    def canAttendMeetings(self, intervals: List[List[int]]) -> bool:
 3        if not intervals:
@@ -8,9 +8,11 @@
 7
 8        prev_end = intervals[0][1]
 9
-10        for start,end in intervals[1:]:
-11            if start < prev_end:
-12                return False
-13            else:
-14                prev_end = end
-15        return True
+10
+11        for s,e in intervals[1:]:
+12            if s < prev_end:
+13                return False
+14            else:
+15                prev_end = e
+16        return True
+17
