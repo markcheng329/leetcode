@@ -1,4 +1,4 @@
-# Last updated: 1/6/2026, 4:55:01 AM
+# Last updated: 1/7/2026, 5:36:18 AM
 1class Solution:
 2    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
 3        intervals.sort(key=lambda x:x[0])
