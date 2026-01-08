@@ -1,4 +1,4 @@
-# Last updated: 1/6/2026, 6:17:25 AM
+# Last updated: 1/8/2026, 1:44:21 AM
 1class MedianFinder:
 2
 3    def __init__(self):
@@ -11,7 +11,7 @@
 10        heapq.heappush(self.large,-heapq.heappop(self.small))
 11
 12        if len(self.small) < len(self.large):
-13            heapq.heappush(self.small, -heapq.heappop(self.large))
+13            heapq.heappush(self.small,-heapq.heappop(self.large))
 14        
 15
 16    def findMedian(self) -> float:
