@@ -1,11 +1,11 @@
-# Last updated: 1/6/2026, 5:05:52 AM
+# Last updated: 1/7/2026, 7:12:19 PM
 1class KthLargest:
 2
 3    def __init__(self, k: int, nums: List[int]):
 4        self.minheap = nums
 5        self.k = k
 6        heapq.heapify(self.minheap)
-7        
+7
 8
 9    def add(self, val: int) -> int:
 10        heapq.heappush(self.minheap,val)
