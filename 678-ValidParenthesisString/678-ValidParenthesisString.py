@@ -1,24 +1,29 @@
-# Last updated: 11/12/2025, 4:57:29 AM
-class Solution:
-    def checkValidString(self, s: str) -> bool:
-        lmin,lmax = 0,0
-
-        for i in range(len(s)):
-            c = s[i]
-
-            if c == "(":
-                lmin +=1
-                lmax +=1
-            elif c == ")":
-                lmin -=1
-                lmax -=1
-            else:
-                lmin -=1
-                lmax +=1
-            
-            if lmax < 0:
-                return False
-            
-            if lmin < 0:
-                lmin = 0
-        return True if lmin == 0 else False
+# Last updated: 1/8/2026, 4:45:12 AM
+1class Solution:
+2    def checkValidString(self, s: str) -> bool:
+3        lpmin = 0
+4        lpmax = 0
+5
+6        for i in range(len(s)):
+7            c = s[i]
+8
+9            if c == "(":
+10                lpmin +=1
+11                lpmax +=1
+12            elif c == ")":
+13                lpmin -=1
+14                lpmax -=1
+15            else:
+16                lpmin -=1
+17                lpmax +=1
+18
+19            if lpmax < 0:
+20                return False
+21            
+22            if lpmin < 0:
+23                lpmin =0
+24        
+25        return True if lpmin==0 else False
+26
+27            
+28
