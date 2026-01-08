@@ -1,4 +1,4 @@
-# Last updated: 1/8/2026, 3:35:10 AM
+# Last updated: 1/8/2026, 3:35:33 AM
 1class Solution:
 2    def maxSubArray(self, nums: List[int]) -> int:
 3        curSum = 0
