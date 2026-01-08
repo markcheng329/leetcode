@@ -1,9 +1,10 @@
-# Last updated: 1/8/2026, 3:50:25 AM
+# Last updated: 1/8/2026, 3:54:37 AM
 1class Solution:
 2    def canJump(self, nums: List[int]) -> bool:
-3        goal = len(nums)-1
+3        farthest = 0
 4
-5        for i in range(len(nums)-2,-1,-1):
-6            if i + nums[i] >= goal:
-7                goal = i
-8        return True if goal == 0 else False
+5        for i in range(len(nums)):
+6            if i > farthest:
+7                return False
+8            farthest = max(farthest,i+nums[i])
+9        return True
