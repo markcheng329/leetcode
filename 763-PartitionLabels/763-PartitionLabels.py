@@ -1,4 +1,4 @@
-# Last updated: 1/8/2026, 4:37:27 AM
+# Last updated: 1/8/2026, 4:37:54 AM
 1class Solution:
 2    def partitionLabels(self, s: str) -> List[int]:
 3        lastindex = {}
