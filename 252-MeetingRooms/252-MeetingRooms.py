@@ -1,4 +1,4 @@
-# Last updated: 1/6/2026, 4:03:17 AM
+# Last updated: 1/8/2026, 2:40:28 AM
 1class Solution:
 2    def canAttendMeetings(self, intervals: List[List[int]]) -> bool:
 3        if not intervals:
