@@ -1,4 +1,4 @@
-# Last updated: 1/6/2026, 4:11:05 AM
+# Last updated: 1/8/2026, 2:47:30 AM
 1class Solution:
 2    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
 3        intervals.sort(key=lambda x:x[0])
