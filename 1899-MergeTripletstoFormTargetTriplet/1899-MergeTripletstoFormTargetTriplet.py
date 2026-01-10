@@ -1,4 +1,4 @@
-# Last updated: 1/8/2026, 4:28:49 AM
+# Last updated: 1/9/2026, 11:07:41 PM
 1class Solution:
 2    def mergeTriplets(self, triplets: List[List[int]], target: List[int]) -> bool:
 3        answers = set()
@@ -13,4 +13,6 @@
 12                answers.add(1)
 13            if t[2] == target[2]:
 14                answers.add(2)
-15        return True if len(answers) ==3 else False
+15
+16        return True if len(answers) ==3 else False
+17            
