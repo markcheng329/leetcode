@@ -1,25 +1,21 @@
-# Last updated: 1/8/2026, 4:37:54 AM
+# Last updated: 1/9/2026, 11:11:52 PM
 1class Solution:
 2    def partitionLabels(self, s: str) -> List[int]:
 3        lastindex = {}
-4
-5        for i in range(len(s)):
-6            c = s[i]
-7            lastindex[c] = i
-8        
-9        size = 0
+4        for i in range(len(s)):
+5            c = s[i]
+6            lastindex[c] = i
+7        
+8        size = 0
+9        end = 0
 10        res = []
-11        end = 0
-12
-13        for i in range(len(s)):
-14            c = s[i]
-15            size +=1
-16            end = max(end,lastindex[c])
-17
-18            if i == end:
-19                res.append(size)
-20                size = 0
-21        return res
-22        
-23
-24
+11
+12        for i in range(len(s)):
+13            c = s[i]
+14            size +=1
+15            end = max(end,lastindex[c])
+16
+17            if i == end:
+18                res.append(size)
+19                size = 0
+20        return res
