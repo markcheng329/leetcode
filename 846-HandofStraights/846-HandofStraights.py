@@ -1,4 +1,4 @@
-# Last updated: 1/11/2026, 3:44:14 AM
+# Last updated: 1/11/2026, 3:45:56 AM
 1class Solution:
 2    def isNStraightHand(self, hand: List[int], groupSize: int) -> bool:
 3        if len(hand) % groupSize != 0:
