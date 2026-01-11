@@ -1,4 +1,4 @@
-# Last updated: 1/11/2026, 4:02:34 AM
+# Last updated: 1/11/2026, 4:03:12 AM
 1class Solution:
 2    def numIslands(self, grid: List[List[str]]) -> int:
 3        res = 0
@@ -7,7 +7,7 @@
 6
 7        def dfs(r,c):
 8            if r < 0 or c < 0 or r>=rows or c>=cols or grid[r][c] == "0":
-9                return
+9                return None
 10            
 11            grid[r][c] = "0"
 12            dfs(r+1,c)
