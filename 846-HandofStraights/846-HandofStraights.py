@@ -1,7 +1,7 @@
-# Last updated: 1/9/2026, 10:31:21 PM
+# Last updated: 1/11/2026, 3:44:14 AM
 1class Solution:
 2    def isNStraightHand(self, hand: List[int], groupSize: int) -> bool:
-3        if len(hand) % groupSize  != 0:
+3        if len(hand) % groupSize != 0:
 4            return False
 5        
 6        count = Counter(hand)
@@ -14,5 +14,3 @@
 13                    else:
 14                        count[i] -=1
 15        return True
-16
-17
