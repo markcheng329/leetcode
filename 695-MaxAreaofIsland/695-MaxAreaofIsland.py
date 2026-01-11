@@ -1,15 +1,15 @@
-# Last updated: 1/10/2026, 12:09:11 AM
+# Last updated: 1/11/2026, 4:10:43 AM
 1class Solution:
 2    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
-3        rows = len(grid)
-4        cols = len(grid[0])
-5        res = 0
-6        
-7
-8        def dfs(r,c):
-9            if r < 0 or c< 0 or r>=rows or c>=cols or grid[r][c] == 0:
-10                return 0
-11
+3        res = 0
+4        rows = len(grid)
+5        cols = len(grid[0])
+6
+7        def dfs(r,c):
+8            if r < 0 or c < 0 or r>=rows or c>=cols or grid[r][c] == 0:
+9                return 0
+10
+11            
 12            area = 1
 13            grid[r][c] = 0
 14            area += dfs(r+1,c)
