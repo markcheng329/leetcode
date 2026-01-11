@@ -1,4 +1,4 @@
-# Last updated: 1/9/2026, 3:55:24 AM
+# Last updated: 1/11/2026, 3:39:59 AM
 1class Solution:
 2    def canJump(self, nums: List[int]) -> bool:
 3        far = 0
