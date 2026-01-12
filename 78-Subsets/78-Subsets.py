@@ -1,18 +1,16 @@
-# Last updated: 1/12/2026, 5:19:15 PM
+# Last updated: 1/12/2026, 6:57:43 PM
 1class Solution:
 2    def subsets(self, nums: List[int]) -> List[List[int]]:
 3        subset = []
 4        res = []
 5
-6        def dfs(i):
-7            if i == len(nums):
-8                res.append(subset.copy())
-9                return 
-10            
-11            subset.append(nums[i])
-12            dfs(i+1)
-13            subset.pop()
-14            dfs(i+1)
-15        
-16        dfs(0)
-17        return res
+6        def dfs(start):
+7            res.append(subset.copy())
+8
+9            for i in range(start,len(nums)):
+10                subset.append(nums[i])
+11                dfs(i+1)
+12                subset.pop()
+13
+14        dfs(0)
+15        return res
