@@ -1,21 +1,21 @@
-# Last updated: 11/14/2025, 10:03:23 PM
-class Solution:
-    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        res = []
-        path = []
-
-        def backtracking(start,remain):
-            if remain == 0:
-                res.append(path.copy())
-            
-            if remain < 0:
-                return
-            
-            for i in range(start,len(candidates)):
-
-                path.append(candidates[i])
-                backtracking(i,remain-candidates[i])
-                path.pop()
-        
-        backtracking(0,target)
-        return res
+# Last updated: 1/12/2026, 6:39:51 PM
+1class Solution:
+2    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+3        res = []
+4        subset = []
+5
+6        def dfs(start,remain):
+7            if remain == 0:
+8                res.append(subset.copy())
+9                return 
+10            
+11            if remain < 0:
+12                return
+13            
+14            for i in range(start,len(candidates)):
+15                subset.append(candidates[i])
+16                dfs(i,remain-candidates[i])
+17                subset.pop()
+18        
+19        dfs(0,target)
+20        return res
