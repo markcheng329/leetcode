@@ -1,4 +1,4 @@
-# Last updated: 1/12/2026, 6:39:51 PM
+# Last updated: 1/12/2026, 7:17:13 PM
 1class Solution:
 2    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
 3        res = []
@@ -7,7 +7,7 @@
 6        def dfs(start,remain):
 7            if remain == 0:
 8                res.append(subset.copy())
-9                return 
+9                return
 10            
 11            if remain < 0:
 12                return
@@ -16,6 +16,5 @@
 15                subset.append(candidates[i])
 16                dfs(i,remain-candidates[i])
 17                subset.pop()
-18        
-19        dfs(0,target)
-20        return res
+18        dfs(0,target)
+19        return res
