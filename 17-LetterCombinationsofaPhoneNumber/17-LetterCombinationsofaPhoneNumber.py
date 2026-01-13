@@ -1,29 +1,29 @@
-# Last updated: 11/14/2025, 5:10:55 PM
-class Solution:
-    def letterCombinations(self, digits: str) -> List[str]:
-        res = []
-        path = []
-
-        phone = {
-            "2": "abc",
-            "3": "def",
-            "4": "ghi",
-            "5": "jkl",
-            "6": "mno",
-            "7": "pqrs",
-            "8": "tuv",
-            "9": "wxyz",
-        }
-
-        def dfs(i):
-            if i == len(digits):
-                res.append("".join(path))
-                return
-            
-            for ch in phone[digits[i]]:
-                path.append(ch)
-                dfs(i+1)
-                path.pop()
-        
-        dfs(0)
-        return res
+# Last updated: 1/13/2026, 1:16:11 AM
+1class Solution:
+2    def letterCombinations(self, digits: str) -> List[str]:
+3        res = []
+4        subset = []
+5
+6        phone = {
+7            "2": "abc",
+8            "3": "def",
+9            "4": "ghi",
+10            "5": "jkl",
+11            "6": "mno",
+12            "7": "pqrs",
+13            "8": "tuv",
+14            "9": "wxyz",
+15        }
+16
+17        def dfs(i):
+18            if i == len(digits):
+19                res.append("".join(subset))
+20                return 
+21            
+22            for ch in phone[digits[i]]:
+23                subset.append(ch)
+24                dfs(i+1)
+25                subset.pop()
+26
+27        dfs(0)
+28        return res
