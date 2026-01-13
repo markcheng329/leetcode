@@ -1,4 +1,4 @@
-# Last updated: 1/13/2026, 1:08:20 AM
+# Last updated: 1/13/2026, 1:08:26 AM
 1class Solution:
 2    def partition(self, s: str) -> List[List[str]]:
 3        res = []
@@ -10,7 +10,7 @@
 9                return
 10            
 11            for j in range(i,len(s)):
-12                if self.ispal(i,j,s):
+12                if self.ispal(i,j,s) == True:
 13                    subset.append(s[i:j+1])
 14                    dfs(j+1)
 15                    subset.pop()
