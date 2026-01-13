@@ -1,11 +1,11 @@
-# Last updated: 1/13/2026, 2:26:28 AM
+# Last updated: 1/13/2026, 2:30:32 AM
 1class Solution:
 2    def solveNQueens(self, n: int) -> List[List[str]]:
 3        col = set()
-4        posdiag = set()
-5        nagdiag = set()
+4        posdiag = set ()
+5        nagdiag = set ()
 6        res = []
-7        board = [["."] * n for i in range(n) ]
+7        board = [["."] * n for i in range(n)]
 8
 9        def dfs(r):
 10            if r == n:
