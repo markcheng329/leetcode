@@ -1,24 +1,26 @@
-# Last updated: 11/13/2025, 6:33:46 AM
-class Solution:
-    def permute(self, nums: List[int]) -> List[List[int]]:
-        res = []
-        subset = []
-        used  = [False] * len(nums)
-
-        def backtracking():
-            if len(subset) == len(nums):
-                res.append(subset.copy())
-                return
-            
-            for i in range(len(nums)):
-                if used[i] == True:
-                    continue
-                
-                used[i] = True
-                subset.append(nums[i])
-                backtracking()
-                subset.pop()
-                used[i] = False
-        
-        backtracking()
-        return res
+# Last updated: 1/12/2026, 7:46:32 PM
+1class Solution:
+2    def permute(self, nums: List[int]) -> List[List[int]]:
+3        res = []
+4        subset = []
+5        used = [False] * len(nums)
+6
+7        def dfs():
+8            if len(subset) == len(nums):
+9                res.append(subset.copy())
+10                return
+11            
+12            for i in range(len(nums)):
+13                if used[i] == True:
+14                    continue
+15                
+16                used[i] = True
+17                subset.append(nums[i])
+18                dfs()
+19                subset.pop()
+20                used[i] = False
+21        dfs()
+22        return res
+23
+24
+25
