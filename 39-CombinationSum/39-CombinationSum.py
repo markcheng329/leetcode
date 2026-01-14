@@ -1,4 +1,4 @@
-# Last updated: 1/12/2026, 7:17:13 PM
+# Last updated: 1/14/2026, 2:48:38 AM
 1class Solution:
 2    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
 3        res = []
@@ -9,8 +9,8 @@
 8                res.append(subset.copy())
 9                return
 10            
-11            if remain < 0:
-12                return
+11            if remain < 0 :
+12                return None
 13            
 14            for i in range(start,len(candidates)):
 15                subset.append(candidates[i])
