@@ -1,4 +1,4 @@
-# Last updated: 1/12/2026, 7:26:36 PM
+# Last updated: 1/14/2026, 2:51:51 AM
 1class Solution:
 2    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
 3        candidates.sort()
@@ -9,14 +9,15 @@
 8            if remain == 0:
 9                res.append(subset.copy())
 10                return
-11            if remain < 0:
-12                return
-13            
-14            for i in range(start,len(candidates)):
-15                if i > start and candidates[i] == candidates[i-1]:
-16                    continue
-17                subset.append(candidates[i])
-18                dfs(i+1,remain-candidates[i])
-19                subset.pop()
-20        dfs(0,target)
-21        return res
+11            
+12            if remain < 0:
+13                return None
+14            
+15            for i in range(start,len(candidates)):
+16                if i > start and candidates[i] == candidates[i-1]:
+17                    continue
+18                subset.append(candidates[i])
+19                dfs(i+1,remain - candidates[i])
+20                subset.pop()
+21        dfs(0,target)
+22        return res
