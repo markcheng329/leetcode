@@ -1,4 +1,4 @@
-# Last updated: 1/12/2026, 7:46:32 PM
+# Last updated: 1/14/2026, 3:01:19 AM
 1class Solution:
 2    def permute(self, nums: List[int]) -> List[List[int]]:
 3        res = []
@@ -13,14 +13,10 @@
 12            for i in range(len(nums)):
 13                if used[i] == True:
 14                    continue
-15                
-16                used[i] = True
-17                subset.append(nums[i])
-18                dfs()
-19                subset.pop()
-20                used[i] = False
-21        dfs()
-22        return res
-23
-24
-25
+15                used[i] = True
+16                subset.append(nums[i])
+17                dfs()
+18                subset.pop()
+19                used[i] = False
+20        dfs()
+21        return res
