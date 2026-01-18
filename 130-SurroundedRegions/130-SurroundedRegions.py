@@ -1,4 +1,4 @@
-# Last updated: 1/18/2026, 3:56:56 AM
+# Last updated: 1/18/2026, 3:58:36 AM
 1class Solution:
 2    def solve(self, board: List[List[str]]) -> None:
 3        """
@@ -27,6 +27,6 @@
 26            for c in range(cols):
 27                if board[r][c] == "O":
 28                    board[r][c] = "X"
-29                if board[r][c] == "#":
+29                elif board[r][c] == "#":
 30                    board[r][c] = "O"
 31                
