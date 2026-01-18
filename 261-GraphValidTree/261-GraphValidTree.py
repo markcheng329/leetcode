@@ -1,33 +1,28 @@
-# Last updated: 11/13/2025, 3:42:30 AM
-class Solution:
-    def validTree(self, n: int, edges: List[List[int]]) -> bool:
-        if len(edges) > n-1:
-            return False
-        
-        adj = [[] for i in range(n)]
-
-        for u,v in edges:
-            adj[u].append(v)
-            adj[v].append(u)
-        
-        visit = set()
-        
-        def dfs(node,parent):
-            if node in visit:
-                return False
-            
-            visit.add(node)
-            
-            for nei in adj[node]:
-                if nei == parent:
-                    continue
-                if not dfs(nei,node):
-                    return False
-            return True
-        
-        return True if dfs(0,-1) and len(visit) == n else False
-                
-            
-            
-            
-            
+# Last updated: 1/18/2026, 5:53:56 AM
+1class Solution:
+2    def validTree(self, n: int, edges: List[List[int]]) -> bool:
+3        if len(edges) > n-1:
+4            return False
+5        
+6        adj  = [[] for i in range(n)]
+7
+8        for u,v in edges:
+9            adj[u].append(v)
+10            adj[v].append(u)
+11        
+12        visit = set()
+13
+14        def dfs(node,parent):
+15            if node in visit:
+16                return False
+17            
+18            visit.add(node)
+19            for nei in adj[node]:
+20                if nei == parent:
+21                    continue
+22                if not dfs(nei,node):
+23                    return False
+24            return True
+25        
+26        return True if dfs(0,-1) and len(visit) == n else False
+27
