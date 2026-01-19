@@ -1,4 +1,4 @@
-# Last updated: 1/18/2026, 6:47:04 AM
+# Last updated: 1/19/2026, 6:49:25 PM
 1"""
 2# Definition for a Node.
 3class Node:
@@ -25,4 +25,7 @@
 24            for nei in node.neighbors:
 25                copy.neighbors.append(dfs(nei))
 26            return copy
-27        return dfs(node)
+27        
+28        return dfs(node)
+29            
+30
