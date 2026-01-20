@@ -1,4 +1,4 @@
-# Last updated: 1/18/2026, 5:53:56 AM
+# Last updated: 1/20/2026, 2:57:26 AM
 1class Solution:
 2    def validTree(self, n: int, edges: List[List[int]]) -> bool:
 3        if len(edges) > n-1:
