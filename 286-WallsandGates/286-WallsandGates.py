@@ -1,4 +1,4 @@
-# Last updated: 1/18/2026, 3:39:00 AM
+# Last updated: 1/19/2026, 11:04:50 PM
 1class Solution:
 2    def wallsAndGates(self, rooms: List[List[int]]) -> None:
 3        """
