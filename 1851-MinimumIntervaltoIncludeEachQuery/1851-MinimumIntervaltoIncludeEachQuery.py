@@ -1,14 +1,14 @@
-# Last updated: 1/18/2026, 7:27:26 AM
+# Last updated: 1/20/2026, 2:07:35 AM
 1class Solution:
 2    def minInterval(self, intervals: List[List[int]], queries: List[int]) -> List[int]:
 3        intervals.sort(key=lambda x:x[0])
-4        minheap = []
-5        res = {}
+4        res = {}
+5        minheap = []
 6        i = 0
 7
 8        for q in sorted(queries):
-9            while i < len(intervals) and intervals[i][0] <=q:
-10                l,r = intervals[i][0],intervals[i][1]
+9            while i < len(intervals) and intervals[i][0] <= q:
+10                l, r = intervals[i][0],intervals[i][1]
 11                heapq.heappush(minheap,((r-l+1),r))
 12                i +=1
 13            
