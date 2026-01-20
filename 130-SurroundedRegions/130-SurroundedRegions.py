@@ -1,4 +1,4 @@
-# Last updated: 1/19/2026, 11:55:22 PM
+# Last updated: 1/19/2026, 11:56:02 PM
 1class Solution:
 2    def solve(self, board: List[List[str]]) -> None:
 3        """
@@ -6,7 +6,7 @@
 5        """
 6        rows,cols = len(board),len(board[0])
 7        directions = [1,0],[-1,0],[0,1],[0,-1]
-8        
+8
 9        def dfs(r,c):
 10            if r not in range(rows) or c not in range(cols) or board[r][c] != "O":
 11                return
@@ -29,4 +29,4 @@
 28                    board[r][c] = "X"
 29                elif board[r][c] == "#":
 30                    board[r][c] = "O"
-31                
+31
