@@ -1,9 +1,9 @@
-# Last updated: 11/13/2025, 4:36:58 AM
-class Solution:
-    def rob(self, nums: List[int]) -> int:
-        rob1,rob2 = 0,0
-        for i in range(len(nums)):
-            maxrob = max(rob1 + nums[i],rob2)
-            rob1 = rob2
-            rob2 = maxrob
-        return rob2
+# Last updated: 1/20/2026, 3:47:55 AM
+1class Solution:
+2    def rob(self, nums: List[int]) -> int:
+3        prev2,prev1 = 0,0
+4        for i in range(len(nums)):
+5            maxrob = max(prev2+nums[i],prev1)
+6            prev2 = prev1
+7            prev1 = maxrob
+8        return prev1
