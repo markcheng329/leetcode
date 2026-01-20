@@ -1,32 +1,33 @@
-# Last updated: 1/18/2026, 4:59:51 AM
+# Last updated: 1/20/2026, 12:24:28 AM
 1class Solution:
 2    def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
 3        preMap = [[] for i in range(numCourses)]
-4
-5        for crs,pre in prerequisites:
-6            preMap[crs].append(pre)
-7        
-8        visit,cycle = set(),set()
-9        res = []
-10
-11        def dfs(crs):
-12            if crs in cycle:
-13                return False
-14            
-15            if crs in visit:
-16                return True
-17            
-18            cycle.add(crs)
-19            for pre in preMap[crs]:
-20                if not dfs(pre):
-21                    return False
-22            cycle.remove(crs)
-23            visit.add(crs)
+4        for crs,pre in prerequisites:
+5            preMap[crs].append(pre)
+6
+7        visited,cycle = set(),set()
+8        res = []
+9
+10        def dfs(crs):
+11            if crs in cycle:
+12                return False
+13            
+14            if crs in visited:
+15                return True
+16
+17            cycle.add(crs)
+18            for pre in preMap[crs]:
+19                if not dfs(pre):
+20                    return False
+21            cycle.remove(crs)
+22            visited.add(crs)
+23            preMap[crs] = []
 24            res.append(crs)
 25            return True
 26        
-27        for i in range(numCourses):
-28            if not dfs(i):
+27        for c in range(numCourses):
+28            if not dfs(c):
 29                return []
 30        return res
-31        
+31            
+32
