@@ -1,4 +1,4 @@
-# Last updated: 1/19/2026, 11:04:50 PM
+# Last updated: 1/19/2026, 11:05:32 PM
 1class Solution:
 2    def wallsAndGates(self, rooms: List[List[int]]) -> None:
 3        """
@@ -17,7 +17,8 @@
 16        while q:
 17            r,c = q.popleft()
 18            for dr,dc in directions:
-19                nr,nc = r + dr, c + dc
+19                nr,nc = r+dr,c+dc
 20                if nr in range(rows) and nc in range(cols) and rooms[nr][nc] == inf:
-21                    rooms[nr][nc] = rooms[r][c] + 1
+21                    rooms[nr][nc] = rooms[r][c] +1
 22                    q.append((nr,nc))
+23        
