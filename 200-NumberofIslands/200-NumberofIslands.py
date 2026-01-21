@@ -1,13 +1,13 @@
-# Last updated: 1/19/2026, 10:54:16 PM
+# Last updated: 1/21/2026, 5:38:30 AM
 1class Solution:
 2    def numIslands(self, grid: List[List[str]]) -> int:
 3        rows,cols = len(grid),len(grid[0])
-4        res = 0
-5        directions = [1,0],[-1,0],[0,1],[0,-1]
+4        directions = [1,0],[-1,0],[0,1],[0,-1]
+5        res = 0
 6
 7        def dfs(r,c):
 8            if r not in range(rows) or c not in range(cols) or grid[r][c] == "0":
-9                return 
+9                return
 10            
 11            grid[r][c] = "0"
 12            for dr,dc in directions:
