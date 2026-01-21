@@ -1,4 +1,4 @@
-# Last updated: 12/10/2025, 9:18:03 PM
+# Last updated: 1/21/2026, 5:59:40 AM
 1class Solution:
 2    def longestCommonPrefix(self, strs: List[str]) -> str:
 3        res = []
