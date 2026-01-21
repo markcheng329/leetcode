@@ -1,4 +1,4 @@
-# Last updated: 1/20/2026, 3:29:05 AM
+# Last updated: 1/21/2026, 5:05:52 AM
 1class Solution:
 2    def minCostClimbingStairs(self, cost: List[int]) -> int:
 3        if len(cost) < 3:
