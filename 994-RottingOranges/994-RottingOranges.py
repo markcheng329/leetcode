@@ -1,9 +1,9 @@
-# Last updated: 1/19/2026, 11:14:17 PM
+# Last updated: 1/21/2026, 3:52:21 AM
 1class Solution:
 2    def orangesRotting(self, grid: List[List[int]]) -> int:
 3        rows,cols = len(grid),len(grid[0])
-4        res = 0
-5        fresh = 0
+4        fresh = 0
+5        res = 0
 6        directions = [1,0],[-1,0],[0,1],[0,-1]
 7        q = deque()
 8
@@ -12,20 +12,20 @@
 11                if grid[r][c] == 1:
 12                    fresh +=1
 13                elif grid[r][c] == 2:
-14                    q.append((r,c))   
+14                    q.append((r,c))
 15
 16        while fresh > 0 and q:
 17            for i in range(len(q)):
 18                r,c = q.popleft()
 19                for dr,dc in directions:
 20                    nr,nc = r+dr,c+dc
-21                    if nr in range(rows) and nc in range(cols) and grid[nr][nc] == 1:
+21                    if nr in range(rows)  and nc in range(cols) and grid[nr][nc] == 1:
 22                        grid[nr][nc] = 2
 23                        fresh -=1
 24                        q.append((nr,nc))
 25            res +=1
-26            
+26        
 27        return res if fresh == 0 else -1
 28
-29            
+29
 30
