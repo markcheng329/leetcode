@@ -1,4 +1,4 @@
-# Last updated: 1/22/2026, 5:38:20 AM
+# Last updated: 1/22/2026, 5:41:32 AM
 1class Solution:
 2    def reverse(self, x: int) -> int:
 3        intmax = 2**31-1
