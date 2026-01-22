@@ -1,4 +1,4 @@
-# Last updated: 1/19/2026, 10:57:29 PM
+# Last updated: 1/22/2026, 4:35:57 AM
 1class Solution:
 2    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
 3        rows,cols = len(grid),len(grid[0])
@@ -8,7 +8,7 @@
 7        def dfs(r,c):
 8            if r not in range(rows) or c not in range(cols) or grid[r][c] == 0:
 9                return 0
-10            
+10
 11            area = 1
 12            grid[r][c] = 0
 13            for dr,dc in directions:
