@@ -1,20 +1,18 @@
-# Last updated: 11/12/2025, 4:59:05 AM
-class Solution:
-    def numDecodings(self, s: str) -> int:
-        dp = {len(s):1}
-
-        def dfs(i):
-            if i in dp:
-                return dp[i]
-            if s[i] == '0':
-                return 0
-            
-            res = dfs(i+1)
-
-            if i+1 < len(s) and (s[i]=="1" or s[i]=="2" and s[i+1] in "0123456"):
-                res += dfs(i+2)
-            
-            dp[i] = res
-            return res
-        return dfs(0)
-        
+# Last updated: 1/27/2026, 2:50:26 AM
+1class Solution:
+2    def numDecodings(self, s: str) -> int:
+3        n = len(s)
+4
+5        dp0 = 1
+6        dp1 = 1 if s[0] != "0" else 0
+7
+8        for i in range(2,n+1):
+9            cur = 0
+10            if s[i-1] != "0":
+11                cur += dp1
+12            
+13            if 10 <= int(s[i-2:i]) <= 26:
+14                cur += dp0
+15            
+16            dp0,dp1 = dp1,cur
+17        return dp1
