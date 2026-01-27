@@ -1,15 +1,22 @@
-# Last updated: 11/12/2025, 4:58:53 AM
-class Solution:
-    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        words = set(wordDict)
-        lens = {len(w) for w in words}
-        n = len(s)
-        dp = [False]*(n+1)
-        dp[0] = True
-        for i in range(1, n+1):
-            for L in lens:
-                j = i - L
-                if j >= 0 and dp[j] and s[j:i] in words:
-                    dp[i] = True
-                    break
-        return dp[n]
+# Last updated: 1/27/2026, 4:37:34 AM
+1class Solution:
+2    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+3        words = set(wordDict)
+4        n = len(s)
+5
+6        q = deque([0])      # 队列里存：当前能到达的下标
+7        visited = set()    # 记录已经处理过的起点
+8
+9        while q:
+10            start = q.popleft()
+11            if start in visited:
+12                continue
+13            visited.add(start)
+14
+15            for end in range(start + 1, n + 1):
+16                if s[start:end] in words:
+17                    if end == n:
+18                        return True
+19                    q.append(end)
+20
+21        return False
