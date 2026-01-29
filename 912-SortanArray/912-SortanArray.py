@@ -1,4 +1,4 @@
-# Last updated: 1/28/2026, 11:30:52 PM
+# Last updated: 1/29/2026, 12:10:45 AM
 1class Solution:
 2    def sortArray(self, nums: List[int]) -> List[int]:
 3        if len(nums) <= 1:
@@ -8,9 +8,9 @@
 7
 8        left = self.sortArray(nums[:mid])
 9        right = self.sortArray(nums[mid:])
-10
+10    
 11        return self.merge(left,right)
-12    
+12
 13
 14    def merge(self,left,right):
 15        i,j = 0,0
@@ -23,7 +23,7 @@
 22            else:
 23                res.append(right[j])
 24                j +=1
-25
+25        
 26        while i < len(left):
 27            res.append(left[i])
 28            i +=1
@@ -32,4 +32,3 @@
 31            res.append(right[j])
 32            j +=1
 33        return res
-34
