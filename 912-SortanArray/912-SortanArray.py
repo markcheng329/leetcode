@@ -1,4 +1,4 @@
-# Last updated: 1/28/2026, 11:29:33 PM
+# Last updated: 1/28/2026, 11:30:36 PM
 1class Solution:
 2    def sortArray(self, nums: List[int]) -> List[int]:
 3        if len(nums) <= 1:
