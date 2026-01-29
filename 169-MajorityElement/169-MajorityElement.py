@@ -1,4 +1,4 @@
-# Last updated: 1/28/2026, 10:00:15 PM
+# Last updated: 1/28/2026, 10:45:36 PM
 1class Solution:
 2    def majorityElement(self, nums: List[int]) -> int:
 3        res = 0
@@ -13,5 +13,3 @@
 12            else:
 13                count -=1
 14        return res
-15            
-16            
