@@ -1,10 +1,10 @@
-# Last updated: 1/28/2026, 11:10:10 PM
+# Last updated: 1/28/2026, 11:10:27 PM
 1class Solution:
 2    def sortColors(self, nums: List[int]) -> None:
 3        """
 4        Do not return anything, modify nums in-place instead.
 5        """
-6        l, r = 0,len(nums)-1
+6        l,r = 0,len(nums)-1
 7        i = 0
 8
 9        while i <= r:
