@@ -1,20 +1,20 @@
-# Last updated: 12/10/2025, 11:23:32 PM
+# Last updated: 1/28/2026, 11:02:26 PM
 1class MyHashMap:
 2
 3    def __init__(self):
-4        self.map = [-1] * (10**6+1)
+4        self.hashmap = [-1] * (10**6+1)
 5        
 6
 7    def put(self, key: int, value: int) -> None:
-8        self.map[key] = value
+8        self.hashmap[key] = value
 9        
 10
 11    def get(self, key: int) -> int:
-12        return self.map[key]
+12        return self.hashmap[key]
 13        
 14
 15    def remove(self, key: int) -> None:
-16        self.map[key] = -1
+16        self.hashmap[key] = -1
 17        
 18
 19
