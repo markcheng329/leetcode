@@ -1,4 +1,4 @@
-# Last updated: 1/28/2026, 11:30:36 PM
+# Last updated: 1/28/2026, 11:30:52 PM
 1class Solution:
 2    def sortArray(self, nums: List[int]) -> List[int]:
 3        if len(nums) <= 1:
@@ -17,7 +17,7 @@
 16        res = []
 17
 18        while i < len(left) and j < len(right):
-19            if left[i] < right[j]:
+19            if left[i] <= right[j]:
 20                res.append(left[i])
 21                i +=1
 22            else:
