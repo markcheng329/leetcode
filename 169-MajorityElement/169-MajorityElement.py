@@ -1,15 +1,14 @@
-# Last updated: 1/28/2026, 10:45:36 PM
+# Last updated: 1/31/2026, 12:38:21 AM
 1class Solution:
 2    def majorityElement(self, nums: List[int]) -> int:
-3        res = 0
-4        count = 0
-5
-6        for i in range(len(nums)):
-7            if count == 0:
-8                res = nums[i]
-9            
-10            if res == nums[i]:
-11                count +=1
-12            else:
-13                count -=1
-14        return res
+3        res,count = 0,0
+4
+5        for i in range(len(nums)):
+6            if count == 0:
+7                res = nums[i]
+8            
+9            if nums[i] == res:
+10                count +=1
+11            else:
+12                count -=1
+13        return res
