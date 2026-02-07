@@ -1,4 +1,4 @@
-# Last updated: 2/7/2026, 4:19:29 PM
+# Last updated: 2/7/2026, 4:49:58 PM
 1# Definition for a binary tree node.
 2# class TreeNode:
 3#     def __init__(self, val=0, left=None, right=None):
@@ -9,9 +9,9 @@
 8    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
 9        if not root:
 10            return []
-11
-12        res = []
-13        q = deque([root])
+11        
+12        q = deque([root])
+13        res = []
 14
 15        while q:
 16            level_size = len(q)
@@ -21,11 +21,10 @@
 20
 21                if node.left:
 22                    q.append(node.left)
-23                if node.right:
-24                    q.append(node.right)
-25
-26                # 这一层最后一个节点
-27                if i == level_size - 1:
+23                
+24                if node.right:
+25                    q.append(node.right)
+26                
+27                if i == level_size -1:
 28                    res.append(node.val)
-29
-30        return res
+29        return res
