@@ -1,4 +1,4 @@
-# Last updated: 2/7/2026, 8:57:26 PM
+# Last updated: 2/7/2026, 8:58:16 PM
 1# Definition for a binary tree node.
 2# class TreeNode:
 3#     def __init__(self, val=0, left=None, right=None):
@@ -12,9 +12,8 @@
 11                return 0
 12            
 13            good = 1 if node.val >= maxval else 0
-14
-15            maxval = max(node.val,maxval)
+14        
+15            maxval = max(maxval,node.val)
 16
 17            return good + dfs(node.left,maxval) + dfs(node.right,maxval)
-18        
-19        return dfs(root,root.val)
+18        return dfs(root,root.val)
