@@ -1,10 +1,9 @@
-# Last updated: 2/9/2026, 3:19:35 PM
+# Last updated: 2/9/2026, 3:20:26 PM
 1class Solution:
 2    def uniquePaths(self, m: int, n: int) -> int:
 3        dp = [1] * n
-4        
-5        for i in range(1, m):
-6            for j in range(1, n):
+4
+5        for i in range(1,m):
+6            for j in range(1,n):
 7                dp[j] += dp[j-1]
-8        
-9        return dp[-1]
+8        return dp[-1]
