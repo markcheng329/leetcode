@@ -1,4 +1,4 @@
-# Last updated: 2/9/2026, 5:20:21 PM
+# Last updated: 2/9/2026, 5:24:22 PM
 1class Solution:
 2    def change(self, amount: int, coins: List[int]) -> int:
 3        dp = [0] * (amount + 1)
